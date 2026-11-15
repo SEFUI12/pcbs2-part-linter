@@ -1,0 +1,72 @@
+# Quick start
+---------------------------------------------
+
+1. Install Python 3.9 or newer from https://python.org
+   During install, tick "Add Python to PATH".
+
+2. Install the one dependency:
+
+       pip install UnityPy
+
+3. Open a terminal in THIS folder and run:
+
+       python pcbs2_part_linter.py --game "C:/Games/PCBS2"
+
+   Replace the path with your own install folder - the one that
+   contains PCBS2.exe and a PCBS2_Data folder.
+
+   If you installed through Steam or Epic in a standard location,
+   you can skip --game entirely and just run:
+
+       python pcbs2_part_linter.py
+
+
+# What it does
+---------------------------------------------
+
+Checks every .xml in your mods folder for problems that PCBS2 will
+silently ignore, and tells you exactly which ones will show up as a
+blank white card in the shop.
+
+
+# Reading the output
+---------------------------------------------
+
+  ERROR  something is broken. Players will notice.
+  WARN   works, but is probably not what you meant.
+  INFO   a note about a pattern; often fine.
+
+Exit code is 1 if any error fired, 0 if clean. Handy in a batch file.
+
+
+# The first run is slow
+---------------------------------------------
+
+On first launch it indexes about 3000 asset bundles (~1-4 minutes).
+That index is cached in %LOCALAPPDATA%\pcbs2-part-linter\ and later
+runs take a few seconds. Use --rebuild-index after a game update.
+
+To skip the bundle scan entirely (much faster, but no prefab checks):
+
+       python pcbs2_part_linter.py --no-mesh
+
+
+# Other useful flags
+---------------------------------------------
+
+  --mods PATH        check a different folder
+  --json report.json save a machine-readable report
+  --verbose          do not group repeated notes
+  --limit 20         show only the first 20 issues
+  --no-color         plain text
+  --quiet            one summary line only
+  --check-level      add the Level distribution note
+  --strict-format    flag comma-list formatting differences
+
+Full list:  python pcbs2_part_linter.py --help
+
+
+# License
+---------------------------------------------
+
+MIT. Do whatever you want with it.
