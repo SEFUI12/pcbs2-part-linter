@@ -9,6 +9,10 @@ It answers the question every PCBS2 mod author eventually asks:
 Nobody has published the answer. This tool contains it, encoded as checks you
 can run against your own mods folder.
 
+Download the zip from [Releases](../../releases), or just grab
+`pcbs2_part_linter.py` — it is a single file with no install step beyond
+`pip install UnityPy`.
+
 ---
 
 ## The finding

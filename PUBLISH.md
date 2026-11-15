@@ -96,7 +96,9 @@ Three of those cases exist because my first draft was wrong:
 
 The bundle/index approach leans on UnityPy by K0lb3.
 
-Source is on GitHub - issues and pull requests welcome, especially if you find a case where the linter disagrees with what the game actually does.
+Source and downloads: https://github.com/SEFUI12/pcbs2-part-linter
+
+Issues and pull requests welcome - especially if you find a case where the linter disagrees with what the game actually does.
 
 ### Permissions
 
